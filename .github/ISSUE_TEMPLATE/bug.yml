@@ -1,1 +1,53 @@
-
+name: Отчёт о дефекте
+description: Дефект, найденный при выполнении сценария
+title: "[Дефект]: "
+labels: ["bug", "triage"]
+body:
+  - type: input
+    id: caz
+    attributes:
+      label: ID тестового сценария
+      placeholder: напр. TC-CRT-001
+    validations:
+      required: true
+  - type: input
+    id: sreda
+    attributes:
+      label: Среда
+      placeholder: saucedemo.com, problem_user, Chrome, Windows 10
+    validations:
+      required: true
+  - type: dropdown
+    id: severitate
+    attributes:
+      label: Критичность
+      options: [Критическая, Высокая, Средняя, Косметическая]
+    validations:
+      required: true
+  - type: textarea
+    id: shagi
+    attributes:
+      label: Шаги воспроизведения
+      description: Пронумерованные шаги, с известного начального состояния
+    validations:
+      required: true
+  - type: textarea
+    id: ozhidaemyy
+    attributes:
+      label: Ожидаемый результат
+    validations:
+      required: true
+  - type: textarea
+    id: fakticheskiy
+    attributes:
+      label: Фактический результат
+    validations:
+      required: true
+  - type: input
+    id: vosproizvoditsya
+    attributes:
+      label: Воспроизводится
+      placeholder: напр. 3 из 3 попыток
+  - type: markdown
+    attributes:
+      value: "Прикрепите скриншот, перетащив файл в это поле."
